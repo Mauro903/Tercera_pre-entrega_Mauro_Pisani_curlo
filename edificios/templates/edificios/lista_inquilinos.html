@@ -8,12 +8,14 @@ h1.titulos-coder{
 }
 {% endblock estilos %}
 
+{% block contenido %}
 <div>
 {% include "edificios/barra_saludo.html" %}
 <h1 class= "titulos-consorcios">Inquilinos</h1><!--cree una clase para poder darle un estilo al titulo-->
 <ul>
-{% for student in estudiantes %}
-<li>{{ student.apellido }}, {{ student.nombre }}</li>
+{% for inquilino in edificios %}
+<li>{{ inquilino.apellido }}, {{ inquilino.nombre }}</li>
 {% endfor %}
 </ul>
 </div>
+{% endblock contenido %}

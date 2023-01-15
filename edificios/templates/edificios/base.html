@@ -18,6 +18,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
         <style>
+            
             {% block estilos %}
             {% endblock estilos %}
         </style>
@@ -28,12 +29,13 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="">Inquilinos</a> 
-                <a class="navbar-brand" href="">Edificios</a>
+                <a class="navbar-brand" href="{% url "listar_inquilinos" %}">Inquilinos</a> 
+                <a class="navbar-brand" href="{% url "listar_edificios"%}">Edificios</a>
                 <a class="navbar-brand" href=""></a>
-               <!-- <a class="btn btn-primary" href="">HOME</a> -->
+               <a class="btn btn-primary" href="{% url "bienvenidos" %}">HOME</a>
             </div>
         </nav>
+
 
         <section style="padding:80px 50px;">
             {% block contenido %}
