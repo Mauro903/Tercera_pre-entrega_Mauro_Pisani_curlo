@@ -1,6 +1,6 @@
 {% extends 'edificios/base.html' %}
 
-{% block subtitulo %}Inquilinos{% endblock subtitulo %}
+{% block subtitulo %}inquilinos{% endblock subtitulo %}
 
 {% block estilos %}
 h1.titulos-consorcios{
@@ -11,10 +11,10 @@ h1.titulos-consorcios{
 {% block contenido %}
 <div>
 {% include "edificios/barra_saludo.html" %}
-<h1 class= "titulos-consorcios">Inquilinos</h1><!--cree una clase para poder darle un estilo al titulo-->
+<h1 class= "titulos-consorcios">inquilinos</h1><!--cree una clase para poder darle un estilo al titulo-->
 <ul>
 {% for inquilino in edificios %}
-<li>{{ inquilino.apellido }}, {{ inquilino.nombre }}</li>
+<li>{{ inquilino.nombre }}, {{ inquilino.apellido }}, {{ inquilino.edificio}}</li>
 {% endfor %}
 </ul>
 </div>

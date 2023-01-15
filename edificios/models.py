@@ -13,11 +13,11 @@ class Inquilino(models.Model):
         return f"{self.apellido}, {self.nombre}" #Para que en el queryset, me diga directamente los strings de los objetos
 
 class Edificio(models.Model):
-    nombre = models.CharField(max_length=30) #Caracteres
+    nombre = models.CharField(max_length=30) 
     direccion = models.CharField(max_length=160)
     encargado= models.CharField(max_length=32)
     telefono = models.IntegerField()
-    #bio = models.TextField(null=True) Archivo de texto que no tiene limites
+
 
     def __str__(self):
         return f"{self.nombre}, {self.direccion}"

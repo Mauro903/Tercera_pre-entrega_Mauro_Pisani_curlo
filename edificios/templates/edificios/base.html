@@ -28,10 +28,10 @@
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
-            <div class="container">
+            <div class="container">             
+                <a class="navbar-brand" href="{% url "listar_edificios" %}">Edificios</a>
                 <a class="navbar-brand" href="{% url "listar_inquilinos" %}">Inquilinos</a> 
-                <a class="navbar-brand" href="{% url "listar_edificios"%}">Edificios</a>
-                <a class="navbar-brand" href="{% url "listar_encargados"%}">Encargados</a>
+                <a class="navbar-brand" href="{% url "listar_encargados" %}">Encargados</a>
                <a class="btn btn-primary" href="{% url "bienvenidos" %}">HOME</a>
             </div>
         </nav>
@@ -48,7 +48,7 @@
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
-                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            
                             <li class="list-inline-item"><a href="#!">Ayuda</a></li>
                             <li class="list-inline-item">⋅</li>
                             <li class="list-inline-item"><a href="#!">Contacto</a></li>
@@ -59,7 +59,7 @@
                     <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0">
                             <li class="list-inline-item me-4">
-                                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                                
                                 <a href="https://www.facebook.com/mauro.p.curlo/"><i class="bi-facebook fs-3"></i></a>
                             </li>
                             <li class="list-inline-item me-4">
