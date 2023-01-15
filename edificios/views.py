@@ -4,8 +4,11 @@ from django.http import HttpResponse
 from edificios.models import Edificio, Inquilino
 
 def bienvenidos(request):
-    return HttpResponse("Bienvenidos a consorcios mengano")
-# Create your views here.
+        return render(
+        request=request,
+        template_name="edificios/inicio.html",
+    )
+
 
 def listar_inquilinos(request):
     contexto = {
