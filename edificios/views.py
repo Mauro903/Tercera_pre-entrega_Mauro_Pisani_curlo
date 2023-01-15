@@ -7,4 +7,6 @@ def bienvenidos(request):
 
 def listar_inquilinos(request):
     return render(request=request, template_name="edificios/lista_inquilinos.html")
-    
+
+def listar_edificios(request):
+    return render(request=request, template_name="edificios/lista_edificios.html")
