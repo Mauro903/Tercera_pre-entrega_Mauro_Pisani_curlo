@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from edificios.models import Edificio, Inquilino
+from edificios.models import Edificio, Inquilino, Encargado
 
 def bienvenidos(request):
         return render(
@@ -30,4 +30,12 @@ def listar_edificios(request):
         context=contexto,
     )
 
-
+def listar_encargados(request):
+    contexto= {
+        "edificios": Encargado.objects.all()
+    }
+    return render(
+        request=request,
+        template_name="edificios/lista_encargados.html",
+        context=contexto,
+    )

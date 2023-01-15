@@ -21,3 +21,13 @@ class Edificio(models.Model):
 
     def __str__(self):
         return f"{self.nombre}, {self.direccion}"
+
+class Encargado(models.Model):
+    nombre = models.CharField(max_length=30)
+    apellido = models.CharField(max_length=30)
+    dni = models.CharField(max_length=32)
+    antiguedad = models.CharField(max_length=100)
+    edificio = models.CharField(max_length= 30)
+    
+    def __str__(self):
+        return f"{self.nombre}, {self.edificio}, {self.antiguedad} "

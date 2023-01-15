@@ -1,0 +1,21 @@
+{% extends 'edificios/base.html' %}
+
+{% block subtitulo %}Encargados{% endblock subtitulo %}
+
+{% block estilos %}
+h1.titulos-consorcios{
+  color: red;
+}
+{% endblock estilos %}
+
+{% block contenido %}
+<div>
+{% include "edificios/barra_saludo.html" %}
+<h1 class= "titulos-consorcios">Encargados</h1><!--cree una clase para poder darle un estilo al titulo-->
+<ul>
+{% for encargado in edificios %}
+<li>{{ encargado.apellido }}, {{ encargado.nombre }}, {{ encargado.edificio}}, {{ encargado.antiguedad }} </li>
+{% endfor %}
+</ul>
+</div>
+{% endblock contenido %}
