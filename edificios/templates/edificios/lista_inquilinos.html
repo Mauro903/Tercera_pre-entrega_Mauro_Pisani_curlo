@@ -1,0 +1,19 @@
+{% extends 'edificios/base.html' %}
+
+{% block subtitulo %} Lista de Inquilinos{% endblock subtitulo %}
+
+{% block estilos %}
+h1.titulos-coder{
+  color: violet;
+}
+{% endblock estilos %}
+
+<div>
+{% include "edificios/barra_saludo.html" %}
+<h1 class= "titulos-consorcios">Lista de inquilinos</h1><!--cree una clase para poder darle un estilo al titulo-->
+<ul>
+{% for student in estudiantes %}
+<li>{{ student.apellido }}, {{ student.nombre }}</li>
+{% endfor %}
+</ul>
+</div>
