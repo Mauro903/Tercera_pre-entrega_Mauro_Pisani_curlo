@@ -4,7 +4,7 @@
 
 {% block contenido %}
 
-<form action="{% url "crear_inquilinos" %}" method="post">
+<form action="{% url 'crear_inquilinos' %}" method="post">
   {% csrf_token %}
   {{ formulario.as_p}}
 

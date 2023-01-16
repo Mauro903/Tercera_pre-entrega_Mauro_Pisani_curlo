@@ -10,11 +10,11 @@ h1.titulos-consorcios{
 
 {% block contenido %}
 <div>
-{% include "edificios/barra_saludo.html" %}
+{% include 'edificios/barra_saludo.html' %}
 <h1 class= "titulos-consorcios">Encargados</h1><!--cree una clase para poder darle un estilo al titulo-->
 
 
-<form action="{% url "buscar_encargado" %}" method="post">
+<form action="{% url 'buscar_encargado' %}" method="post">
   {% csrf_token %}
 <br>
   <input type="text" name="busqueda">
@@ -23,7 +23,7 @@ h1.titulos-consorcios{
 <br>
 
 <ul>
-{% for encargado in edificios %}
+{% for encargado in encargado %}
 <li>Apellido: {{ encargado.apellido }}, <br> Nombre: {{ encargado.nombre }}, <br> Edificio: {{ encargado.edificio}}, <br> Antiguedad: {{ encargado.antiguedad }} </li>
 <br>
 {% endfor %}

@@ -35,7 +35,7 @@ def listar_edificios(request):
 
 def listar_encargados(request):
     contexto= {
-        "edificios": Encargado.objects.all()
+        "encargado": Encargado.objects.all()
     }
     return render(
         request=request,
@@ -73,7 +73,7 @@ def buscar_encargado(request):
         encargado = Encargado.objects.filter( 
             Q(nombre__contains=data["busqueda"]) | Q(apellido__exact=data["busqueda"])
         )
-
+    
         contexto = {
             "encargado": encargado
         }
