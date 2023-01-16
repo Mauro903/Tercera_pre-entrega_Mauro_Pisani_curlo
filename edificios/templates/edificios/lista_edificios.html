@@ -14,7 +14,8 @@ h1.titulos-consorcios{
 <h1 class= "titulos-consorcios">Edificios</h1><!--cree una clase para poder darle un estilo al titulo-->
 <ul>
 {% for edificio in edificios %}
-<li>{{ edificio.nombre }}, {{ edificio.direccion }}</li>
+<li>Edificio: {{ edificio.nombre }}, <br> Dirección: {{ edificio.direccion }}, <br> Encargado: {{ edificio.encargado}},</li>
+<br>
 {% endfor %}
 </ul>
 </div>

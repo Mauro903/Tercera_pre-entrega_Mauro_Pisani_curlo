@@ -14,7 +14,8 @@ h1.titulos-consorcios{
 <h1 class= "titulos-consorcios">Encargados</h1><!--cree una clase para poder darle un estilo al titulo-->
 <ul>
 {% for encargado in edificios %}
-<li>{{ encargado.apellido }}, {{ encargado.nombre }}, {{ encargado.edificio}}, {{ encargado.antiguedad }} </li>
+<li>Apellido: {{ encargado.apellido }}, <br> Nombre: {{ encargado.nombre }}, <br> Edificio: {{ encargado.edificio}}, <br> Antiguedad: {{ encargado.antiguedad }} </li>
+<br>
 {% endfor %}
 </ul>
 </div>

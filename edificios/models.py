@@ -10,7 +10,7 @@ class Inquilino(models.Model):
     edificio = models.CharField(max_length= 30)
 
     def __str__(self):
-        return f"{self.apellido}, {self.nombre}" #Para que en el queryset, me diga directamente los strings de los objetos
+        return f"{self.apellido}, {self.nombre}, {self.edificio}" #Para que en el queryset, me diga directamente los strings de los objetos
 
 class Edificio(models.Model):
     nombre = models.CharField(max_length=30) 
@@ -20,7 +20,7 @@ class Edificio(models.Model):
 
 
     def __str__(self):
-        return f"{self.nombre}, {self.direccion}"
+        return f"{self.nombre}, {self.direccion}, {self.encargado}"
 
 class Encargado(models.Model):
     nombre = models.CharField(max_length=30)

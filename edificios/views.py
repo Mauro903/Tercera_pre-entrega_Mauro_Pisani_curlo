@@ -1,7 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
 
-from edificios.models import Edificio, Inquilino, Encargado
+from django.urls import reverse
+
+from edificios.models import *
+from edificios.forms import *
 
 def bienvenidos(request):
         return render(
@@ -39,3 +41,27 @@ def listar_encargados(request):
         template_name="edificios/lista_encargados.html",
         context=contexto,
     )
+
+def crear_inquilino(request):
+    if request.method == "POST":
+        formulario = InquilinoFormulario(request.POST)
+
+        if formulario.is_valid():
+            data = formulario.cleaned_data
+            inquilino= Inquilino(
+            nombre= data["nombre"],
+            apellido= data["apellido"],
+            dni= data["dni"],
+            email= data["email"],
+            fecha_nacimiento= data["fecha_nacimiento"], 
+            edificio= data["edificio"])
+            inquilino.save()
+            url_exitosa = reverse("listar_inquilinos")
+            return redirect(url_exitosa)
+    else:
+        formulario = InquilinoFormulario()
+        return render(
+            request=request,
+            template_name="edificios/formulario_inquilinos.html",
+            context={"formulario":  formulario},
+        )

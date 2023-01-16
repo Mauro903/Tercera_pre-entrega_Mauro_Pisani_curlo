@@ -12,9 +12,11 @@ h1.titulos-consorcios{
 <div>
 {% include "edificios/barra_saludo.html" %}
 <h1 class= "titulos-consorcios">inquilinos</h1><!--cree una clase para poder darle un estilo al titulo-->
+<a href= "{%url "crear_inquilinos" %}">Añadir inquilino</a>
 <ul>
 {% for inquilino in edificios %}
-<li>{{ inquilino.nombre }}, {{ inquilino.apellido }}, {{ inquilino.edificio}}</li>
+<li>Apellido: {{ inquilino.aepllido }}, <br> Nombre:{{ inquilino.nombre }}, <br> Edificio: {{ inquilino.edificio }}</li>
+<br>
 {% endfor %}
 </ul>
 </div>

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from edificios.models import Edificio, Inquilino, Encargado
+from edificios.models import *
 
 admin.site.register(Edificio)
 admin.site.register(Inquilino)

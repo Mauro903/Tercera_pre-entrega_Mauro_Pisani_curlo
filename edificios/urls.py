@@ -1,4 +1,5 @@
-from edificios.views import bienvenidos, listar_inquilinos, listar_edificios, listar_encargados
+from edificios.views import *
+
 from django.urls import path
 
 
@@ -7,4 +8,5 @@ urlpatterns = [
     path("edificios/", listar_edificios, name="listar_edificios"),
     path("inquilinos/", listar_inquilinos, name="listar_inquilinos"),
     path("encargados/", listar_encargados, name= "listar_encargados"),
+    path("crear-inquilinos/", crear_inquilino, name="crear_inquilinos"),
 ]
