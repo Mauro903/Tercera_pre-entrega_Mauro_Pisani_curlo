@@ -9,4 +9,5 @@ urlpatterns = [
     path("inquilinos/", listar_inquilinos, name="listar_inquilinos"),
     path("encargados/", listar_encargados, name= "listar_encargados"),
     path("crear-inquilinos/", crear_inquilino, name="crear_inquilinos"),
+    path("buscar-encargado/", buscar_encargado, name="buscar_encargado"),
 ]

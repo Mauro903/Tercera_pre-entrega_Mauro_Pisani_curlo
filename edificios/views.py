@@ -4,6 +4,7 @@ from django.urls import reverse
 
 from edificios.models import *
 from edificios.forms import *
+from django.db.models import Q
 
 def bienvenidos(request):
         return render(
@@ -64,4 +65,25 @@ def crear_inquilino(request):
             request=request,
             template_name="edificios/formulario_inquilinos.html",
             context={"formulario":  formulario},
+        )
+
+def buscar_encargado(request):
+    if request.method == "POST":
+        data= request.POST
+        encargado = Encargado.objects.filter( 
+            Q(nombre__contains=data["busqueda"]) | Q(apellido__contains=data["busqueda"])
+        )
+
+        contexto = {
+            "encargado": encargado
+        }
+        return render(
+            request=request,
+            template_name="edificios/lista_encargados.html",
+            context=contexto,
+        )
+    else:
+        return render(
+            request=request,
+            template_name="edificios/busqueda_encargado.html",
         )

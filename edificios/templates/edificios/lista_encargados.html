@@ -12,6 +12,7 @@ h1.titulos-consorcios{
 <div>
 {% include "edificios/barra_saludo.html" %}
 <h1 class= "titulos-consorcios">Encargados</h1><!--cree una clase para poder darle un estilo al titulo-->
+<a href= "{% url "buscar_encargado" %}">Buscar</a>
 <ul>
 {% for encargado in edificios %}
 <li>Apellido: {{ encargado.apellido }}, <br> Nombre: {{ encargado.nombre }}, <br> Edificio: {{ encargado.edificio}}, <br> Antiguedad: {{ encargado.antiguedad }} </li>
