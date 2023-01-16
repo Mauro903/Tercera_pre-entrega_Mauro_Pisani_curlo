@@ -71,7 +71,7 @@ def buscar_encargado(request):
     if request.method == "POST":
         data= request.POST
         encargado = Encargado.objects.filter( 
-            Q(nombre__contains=data["busqueda"]) | Q(apellido__contains=data["busqueda"])
+            Q(nombre__contains=data["busqueda"]) | Q(apellido__exact=data["busqueda"])
         )
 
         contexto = {
@@ -81,9 +81,4 @@ def buscar_encargado(request):
             request=request,
             template_name="edificios/lista_encargados.html",
             context=contexto,
-        )
-    else:
-        return render(
-            request=request,
-            template_name="edificios/busqueda_encargado.html",
         )
