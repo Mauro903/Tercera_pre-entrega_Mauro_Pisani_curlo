@@ -6,6 +6,35 @@
 h1.titulos-consorcios{
   color: red;
 }
+table{
+  width: 50%;
+  background-color: lightblue;
+  text-align: center;
+  vertical-align: top;
+  border-spacing: 10px;
+  background: #6c757d;
+  color: #fff;
+}
+
+table, th, td {
+  border: 0.5px solid white;
+  border-collapse: separate;
+}
+
+th, td{
+  margin:10 px;
+  padding: 0.em;
+  border-collapse: collapse;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+  
+}
+
+caption {
+  padding: 0.3em;
+}
 {% endblock estilos %}
 
 {% block contenido %}
@@ -24,8 +53,23 @@ h1.titulos-consorcios{
 
 <ul>
 {% for encargado in encargado %}
-<li>Apellido: {{ encargado.apellido }}, <br> Nombre: {{ encargado.nombre }}, <br> Edificio: {{ encargado.edificio}}, <br> Antiguedad: {{ encargado.antiguedad }} </li>
-<br>
+
+<table>
+  <tr>
+    <th>Apellido:</th>
+    <th>Nombre:</th>
+    <th>Edificio:</th>
+    <th>Antiguedad:</th>
+  </tr> 
+
+  <tr>
+    <td>{{ encargado.apellido }}</td>
+    <td>{{ encargado.nombre}}</td>
+    <td>{{ encargado.edificio}}</td>
+    <td>{{ encargado.antiguedad}}</td>
+  </tr>
+</table>
+
 {% endfor %}
 </ul>
 </div>

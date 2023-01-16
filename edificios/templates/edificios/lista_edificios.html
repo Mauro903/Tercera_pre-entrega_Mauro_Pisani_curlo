@@ -6,6 +6,37 @@
 h1.titulos-consorcios{
   color: red;
 }
+
+table{
+  width: 50%;
+  background-color: lightblue;
+  text-align: center;
+  vertical-align: top;
+  border-spacing: 10px;
+  background: #6c757d;
+  color: #fff;
+}
+
+table, th, td {
+  border: 0.5px solid white;
+  border-collapse: separate;
+}
+
+th, td{
+  margin:10 px;
+  padding: 0.em;
+  border-collapse: collapse;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+  
+}
+
+caption {
+  padding: 0.3em;
+}
+
 {% endblock estilos %}
 
 {% block contenido %}
@@ -14,8 +45,20 @@ h1.titulos-consorcios{
 <h1 class= "titulos-consorcios">Edificios</h1><!--cree una clase para poder darle un estilo al titulo-->
 <ul>
 {% for edificio in edificios %}
-<li>Edificio: {{ edificio.nombre }}, <br> Dirección: {{ edificio.direccion }}, <br> Encargado: {{ edificio.encargado}},</li>
-<br>
+
+<table>
+  <tr>
+    <th>Edificio:</th>
+    <th>Dirección:</th>
+    <th>Encargado:</th>
+  </tr> 
+
+  <tr>
+    <td>{{ edificio.nombre }}</td>
+    <td>{{ edificio.direccion }}</td>
+    <td>{{ edificio.encargado}}</td>
+  </tr>
+</table>
 {% endfor %}
 </ul>
 </div>

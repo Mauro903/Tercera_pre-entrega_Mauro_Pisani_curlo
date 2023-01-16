@@ -11,6 +11,34 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+table, th, td{
+  border:1px solid black;
+  border-collapse: collapse;
+}
+
+table{
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+}
+
+th{
+  text-align: left;
+}
+
+div-imagen-fondo {
+  background-image: url(static/assets/img/imagen-de-fondo.jpg);
+  background-position: center center;
+  background-size: contain;
+}
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;

@@ -6,6 +6,35 @@
 h1.titulos-consorcios{
   color: red;
 }
+table{
+  width: 50%;
+  background-color: lightblue;
+  text-align: center;
+  vertical-align: top;
+  border-spacing: 10px;
+  background: #6c757d;
+  color: #fff;
+}
+
+table, th, td {
+  border: 0.5px solid white;
+  border-collapse: separate;
+}
+
+th, td{
+  margin:10 px;
+  padding: 0.em;
+  border-collapse: collapse;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+  
+}
+
+caption {
+  padding: 0.3em;
+}
 {% endblock estilos %}
 
 {% block contenido %}
@@ -15,8 +44,20 @@ h1.titulos-consorcios{
 <a href= "{%url 'crear_inquilinos' %}">Añadir inquilino</a>
 <ul>
 {% for inquilino in inquilino %}
-<li>Apellido: {{ inquilino.aepllido }}, <br> Nombre: {{ inquilino.nombre }}, <br> Edificio: {{ inquilino.edificio }}</li>
-<br>
+
+<table>
+  <tr>
+    <th>Apellido:</th>
+    <th>Nombre:</th>
+    <th>Edificio:</th>
+  </tr> 
+  <tr>
+    <td>{{ inquilino.apellido}}</td>
+    <td>{{ inquilino.nombre}}</td>
+    <td>{{ inquilino.edificio}}</td>
+  </tr>
+</table>
+
 {% endfor %}
 </ul>
 </div>
