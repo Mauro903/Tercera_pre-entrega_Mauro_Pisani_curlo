@@ -52,7 +52,7 @@ caption {
 <br>
 
 <ul>
-{% for encargado in encargado %}
+
 
 <table>
   <tr>
@@ -61,16 +61,18 @@ caption {
     <th>Edificio:</th>
     <th>Antiguedad:</th>
   </tr> 
-
+  {% for encargado in encargado %}
   <tr>
+   
     <td>{{ encargado.apellido }}</td>
     <td>{{ encargado.nombre}}</td>
     <td>{{ encargado.edificio}}</td>
     <td>{{ encargado.antiguedad}}</td>
+    
   </tr>
+  {% endfor %}
 </table>
 
-{% endfor %}
 </ul>
 </div>
 {% endblock contenido %}

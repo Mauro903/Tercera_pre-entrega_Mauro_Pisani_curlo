@@ -44,7 +44,7 @@ caption {
 {% include 'edificios/barra_saludo.html' %}
 <h1 class= "titulos-consorcios">Edificios</h1><!--cree una clase para poder darle un estilo al titulo-->
 <ul>
-{% for edificio in edificios %}
+
 
 <table>
   <tr>
@@ -52,14 +52,15 @@ caption {
     <th>Dirección:</th>
     <th>Encargado:</th>
   </tr> 
-
+  {% for edificio in edificios %}
   <tr>
     <td>{{ edificio.nombre }}</td>
     <td>{{ edificio.direccion }}</td>
     <td>{{ edificio.encargado}}</td>
   </tr>
+  {% endfor %}
 </table>
-{% endfor %}
+
 </ul>
 </div>
 {% endblock contenido %}

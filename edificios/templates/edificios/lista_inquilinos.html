@@ -43,7 +43,7 @@ caption {
 <h1 class= "titulos-consorcios">inquilinos</h1><!--cree una clase para poder darle un estilo al titulo-->
 <a href= "{%url 'crear_inquilinos' %}">Añadir inquilino</a>
 <ul>
-{% for inquilino in inquilino %}
+
 
 <table>
   <tr>
@@ -51,11 +51,13 @@ caption {
     <th>Nombre:</th>
     <th>Edificio:</th>
   </tr> 
+  {% for inquilino in inquilino %}
   <tr>
     <td>{{ inquilino.apellido}}</td>
     <td>{{ inquilino.nombre}}</td>
     <td>{{ inquilino.edificio}}</td>
   </tr>
+  {% endfor %}
 </table>
 
 {% endfor %}
