@@ -57,7 +57,8 @@ _127.0.0.1:8000/admin_🔩
 ### vamos a poder ver, editar y eliminar la informacion de los inquilinos, asi como tambien añadir nuevos.
 ### Cuenta con una pagina de inicio donde recibiran el mensaje de bienvenida⌨️
 ```
-Espero que encuentren correcta la entrega del trabajo y tambien espero las correcciones necesarias para seguir mejorando.
+Espero que encuentren correcta la entrega del trabajo y tambien espero las correcciones necesarias para seguir mejorando
+(Comence a realizar ediciones en mi proyecto en la clase 22, por lo cual tal vez vena botones de esa clase, o alguna parte de codigo que aun quedo incompleta por esta razon).
 ```
 ## Construido con 🛠️
 
@@ -70,7 +71,7 @@ Espero que encuentren correcta la entrega del trabajo y tambien espero las corre
 
 
 ## Expresiones de Gratitud 🎁
-Gracias por las Correcciones de cada Pre-entrega de las clases. y que tengan una buena semana
+Gracias por las Correcciones de cada Pre-entrega de las clases. y que tengan una buena semana 
 
 
 
