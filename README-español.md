@@ -6,15 +6,12 @@ El proyecto se trata de una pagina que seria utilizada por la persona/personas q
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-Mira **Deployment** para conocer como desplegar el proyecto.
-
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
-
 ```
-Da un ejemplo
+Se necesita tener instalado:
+VSC, Python, Django, git y tener un usuario de GitHub
 ```
 
 ### Instalación 🔧
