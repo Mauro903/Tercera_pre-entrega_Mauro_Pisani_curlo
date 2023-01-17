@@ -1,0 +1,27 @@
+{% extends 'edificios/base.html' %}
+
+{% block subtitulo %}Info inquilinos{% endblock subtitulo %}
+
+
+{% block contenido %}
+<h4>{{inquilino.edificio}}</h4>
+<span>
+  <b>apellido:</b> {{inquilino.apellido}}
+</span>
+<br>
+<span>
+    <b>Nombre:</b> {{inquilino.nombre}}
+  </span>
+<br>
+{% if inquilino.descripcion %}
+<span>
+  <b>Descripcion:</b> {{inquilino.descripcion}}
+</span>
+{% endif %}
+<br><br>
+
+<a href="{% url 'listar_inquilinos' %}">Volver a la lista</a>
+
+{% endblock contenido %}
+
+

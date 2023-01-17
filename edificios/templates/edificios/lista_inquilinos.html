@@ -42,25 +42,44 @@ caption {
 {% include 'edificios/barra_saludo.html' %}
 <h1 class= "titulos-consorcios">inquilinos</h1><!--cree una clase para poder darle un estilo al titulo-->
 <a href= "{%url 'crear_inquilinos' %}">Añadir inquilino</a>
+<br><br>
 <ul>
-
-
+  
 <table>
   <tr>
     <th>Apellido:</th>
     <th>Nombre:</th>
     <th>Edificio:</th>
+    <th>Descripcion:</th>
+    <td colspan="3">Acciones</td>
+
   </tr> 
   {% for inquilino in inquilino %}
   <tr>
     <td>{{ inquilino.apellido}}</td>
     <td>{{ inquilino.nombre}}</td>
     <td>{{ inquilino.edificio}}</td>
+    <td>{{ inquilino.descripcion}}</td>
+    <td>
+      <a href="{% url "ver_inquilinos" inquilino.id %}" method="post">
+        <input type="submit" value= "ver"/> 
+    </td>
+    <td>
+      <form action="{% url "editar_inquilino" inquilino.id %}" method="post">
+        {% csrf_token %}
+      <input type="submit" value= "Editar"/>  
+    </td>
+ </form>  
+  <td>
+      <form action="{% url "eliminar_inquilino" inquilino.id %}" method="post">
+        {% csrf_token %}
+      <input type="submit" value= "Eliminar"/>
+    </td>
+  </form>
   </tr>
   {% endfor %}
 </table>
 
-{% endfor %}
 </ul>
 </div>
 {% endblock contenido %}

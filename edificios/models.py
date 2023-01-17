@@ -8,6 +8,8 @@ class Inquilino(models.Model):
     email = models.EmailField()
     fecha_nacimiento = models.DateField(null=True) #El null=True es para no tener que completarlo
     edificio = models.CharField(max_length= 30)
+    descripcion = models.CharField (max_length=200)
+   
 
     def __str__(self):
         return f"{self.apellido}, {self.nombre}, {self.edificio}" #Para que en el queryset, me diga directamente los strings de los objetos

@@ -51,12 +51,14 @@ caption {
     <th>Edificio:</th>
     <th>Dirección:</th>
     <th>Encargado:</th>
+
   </tr> 
   {% for edificio in edificios %}
   <tr>
     <td>{{ edificio.nombre }}</td>
     <td>{{ edificio.direccion }}</td>
     <td>{{ edificio.encargado}}</td>
+
   </tr>
   {% endfor %}
 </table>
