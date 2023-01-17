@@ -41,55 +41,33 @@ Para instalar las dependencias corre este comando:
 ```
 _pip install -r requirements.txt_
 
-```
-hasta finalizar
-```
-
 _Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
 
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
+## Crea un superuser en la consola:⚙️
 ```
-Da un ejemplo
+Para crearlo corre este comando:
 ```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
+_python manage.py createsuperuser_
 ```
-Da un ejemplo
+Acceder con user y password via:
 ```
+_127.0.0.1:8000/admin_🔩
 
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
-
+### Este proyecto es una web que le va a permitir a los que manejan consorcios de edificios, poder tener un listado de sus inquilinos.
+### Tambien les va a permitir poder Buscar a los encargados de cada edificio, para ver quienes estan a cargo de cada uno de ellos.
+### a los usuarios que ingresen a la pagina les va a permitir ver tambien los datos de los encargados para poder tener contacto con ellos.
+### asi como tambien van a poder encontrar la direccion de los edificios que estan dentro del grupo
+### van a poder tener acceso a las redes sociales para comunicarse con las personas que se encargan de los consorcios (En este caso estan las mias)
+### vamos a poder ver, editar y eliminar la informacion de los inquilinos, asi como tambien añadir nuevos.
+### Cuenta con una pagina de inicio donde recibiran el mensaje de bienvenida⌨️
+```
+Espero que encuentren correcta la entrega del trabajo y tambien espero las correcciones necesarias para seguir mejorando.
+```
 ## Construido con 🛠️
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
+* [Startbootstrap](https://startbootstrap.com/) - El framework web usado
 
 ## Autores ✒️
 
@@ -98,7 +76,7 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 
 
 ## Expresiones de Gratitud 🎁
-Gracias por las Correcciones de cada Pre-entrega de las clases.
+Gracias por las Correcciones de cada Pre-entrega de las clases. y que tengan una buena semana
 
 
 
