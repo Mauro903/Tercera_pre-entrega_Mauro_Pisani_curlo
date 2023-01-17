@@ -61,8 +61,6 @@ Espero que encuentren correcta la entrega del trabajo y tambien espero las corre
 ```
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
 * [Startbootstrap](https://startbootstrap.com/) - El framework web usado
 
 ## Autores ✒️
