@@ -38,7 +38,6 @@ Para instalar las dependencias corre este comando:
 ```
 _pip install -r requirements.txt_
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
 
 ## Crea un superuser en la consola:⚙️
 ```
