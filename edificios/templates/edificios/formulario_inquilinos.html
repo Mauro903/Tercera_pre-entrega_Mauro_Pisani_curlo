@@ -1,9 +1,14 @@
 {% extends 'edificios/base.html' %}
 
-{% block subtitulo %}Editar inquilinos {% endblock subtitulo %}
+{% block estilos %}
+h1.titulos-consorcios{
+  color: grey;
+}
+{% endblock estilos %}
 
 {% block contenido %}
 
+<h1 class= "titulos-consorcios">Editar inquilino</h1>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}

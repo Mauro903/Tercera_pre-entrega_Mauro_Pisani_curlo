@@ -21,4 +21,7 @@ urlpatterns = [
     path('eliminar-inquilinos/<int:pk>/', InquilinoDeleteView.as_view(), name='eliminar_inquilino'),
     path('editar-inquilinos/<int:pk>/', InquilinoUpdateView.as_view(), name='editar_inquilino'),
     path('inquilinos/<int:pk>/', InquilinoDetailView.as_view(), name='ver_inquilino'),
+    #URLS usuario y sesion
+    path('registro/', registro, name='registro'),
+    
 ]

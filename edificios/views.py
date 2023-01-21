@@ -163,4 +163,50 @@ class InquilinoUpdateView(UpdateView):
 class InquilinoDeleteView(DeleteView):
     model = Inquilino
     success_url = reverse_lazy('listar_inquilinos')
-    template_name = "estudiantes/confirmar_eliminacion_inquilino.html"
+    template_name = "edificios/confirmar_eliminacion_inquilino.html"
+
+def registro(request):
+    if request.method == "POST":
+        formulario = UserRegisterForm(request.POST)
+
+        if formulario.is_valid():
+            formulario.save()  # Esto lo puedo usar porque es un model form
+            url_exitosa = reverse('bienvenidos')
+            return redirect(url_exitosa)
+    else:  # GET
+        formulario = UserRegisterForm()
+    return render(
+        request=request,
+        template_name='edificios/registro.html',
+        context={'form': formulario},
+    )
+
+
+def login_view(request):
+    next_url = request.GET.get('next')
+    if request.method == "POST":
+        form = AuthenticationForm(request, data=request.POST)
+
+        if form.is_valid():
+            data = form.cleaned_data
+            usuario = data.get('username')
+            password = data.get('password')
+            user = authenticate(username=usuario, password=password)
+            # user puede ser un usuario o None
+            if user:
+                login(request=request, user=user)
+                if next_url:
+                    return redirect(next_url)
+                url_exitosa = reverse('bienvenidos')
+                return redirect(url_exitosa)
+    else:  # GET
+        form = AuthenticationForm()
+    return render(
+        request=request,
+        template_name='edificios/login.html',
+        context={'form': form},
+    )
+
+
+class CustomLogoutView(LogoutView):
+    template_name = 'edificios/logout.html'

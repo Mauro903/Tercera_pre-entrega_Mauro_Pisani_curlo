@@ -1,10 +1,18 @@
 {% extends 'edificios/base.html' %}
 
-{% block subtitulo %}Info inquilinos{% endblock subtitulo %}
+{% block estilos %}
+h1.titulos-consorcios{
+  color: grey;
+}
+{% endblock estilos %}
+
 
 {% block contenido %}
 
-<h4>{{oject.dni}}, {{oject.fecha_nacimiento}} </h4>
+<h1 class= "titulos-consorcios">Informacion extra</h1>
+
+
+<h4>DNI: {{object.dni}}, <br>Fehca de nacimiento: {{object.fecha_nacimiento}}, <br>Email: {{object.email}} </h4>
 
 <!--
 <span>
