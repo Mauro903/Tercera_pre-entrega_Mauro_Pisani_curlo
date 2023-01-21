@@ -9,8 +9,12 @@ urlpatterns = [
     path('inquilinos/', listar_inquilinos, name='listar_inquilinos'),
     path('encargados/', listar_encargados, name= 'listar_encargados'),
     path('crear-inquilinos/', crear_inquilino, name='crear_inquilinos'),
+    #URLS basadas en views funcionales
     path('buscar-encargado/', buscar_encargado, name='buscar_encargado'),
     path('inquilinos/<int:id>/', ver_inquilinos, name='ver_inquilinos'),
     path('editar-inquilinos/<int:id>/', editar_inquilino, name='editar_inquilino'),
     path('eliminar-inquilinos/<int:id>/', eliminar_inquilino, name='eliminar_inquilino'),
+    # URLS basadas en calss based views
+    
+
 ]

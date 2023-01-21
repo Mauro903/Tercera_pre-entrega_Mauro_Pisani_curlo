@@ -106,11 +106,10 @@ def editar_inquilino(request, id):
             inquilino.nombre= data["nombre"]
             inquilino.apellido= data["apellido"]
             inquilino.descripcion = data["descripcion"]
-            inquilino.dni= data["dni"],
-            inquilino.email= data["email"],
-            inquilino.fecha_nacimiento= data["fecha_nacimiento"], 
+            inquilino.dni= data["dni"]
+            inquilino.email= data["email"]
+            inquilino.fecha_nacimiento= data["fecha_nacimiento"] 
             inquilino.edificio= data["edificio"]
-            inquilino.descripcion= data["descripcion"]
             inquilino.save()
             url_exitosa = reverse("listar_inquilinos")
             return redirect(url_exitosa)
@@ -119,6 +118,10 @@ def editar_inquilino(request, id):
                 "nombre": inquilino.nombre,
                 "apellido": inquilino.apellido,
                 "descripcion": inquilino.descripcion,
+                "dni": inquilino.dni,
+                "email":inquilino.email,
+                "fecha_nacimiento": inquilino.fecha_nacimiento,
+                "edificio": inquilino.edificio,
             }
             formulario = InquilinoFormulario(initial=inicial)
         return render(
