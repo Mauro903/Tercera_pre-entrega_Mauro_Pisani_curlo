@@ -4,7 +4,9 @@
 
 
 {% block contenido %}
-<h4>{{inquilino.edificio}}</h4>
+<h4>{{oject.edificio}}, {{oject.apellido}}, {{oject.nombre}}, {{oject.descripcion}} </h4>
+
+<!--
 <span>
   <b>apellido:</b> {{inquilino.apellido}}
 </span>
@@ -19,7 +21,7 @@
 </span>
 {% endif %}
 <br><br>
-
+-->
 <a href="{% url 'listar_inquilinos' %}">Volver a la lista</a>
 
 {% endblock contenido %}

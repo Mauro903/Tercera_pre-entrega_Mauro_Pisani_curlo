@@ -14,15 +14,15 @@ def bienvenidos(request):
     )
 
 
-def listar_inquilinos(request):
-    contexto = {
-        "inquilino": Inquilino.objects.all()
-    }
-    return render(
-        request=request,
-        template_name="edificios/lista_inquilinos.html",
-        context=contexto,
-    )
+#def listar_inquilinos(request):
+ #   contexto = {
+  #      "inquilino": Inquilino.objects.all()
+ #   }
+ #   return render(
+ #       request=request,
+  #      template_name="edificios/lista_inquilinos.html",
+ #       context=contexto,
+ #   )
 
 def listar_edificios(request):
     contexto= {
@@ -44,29 +44,29 @@ def listar_encargados(request):
         context=contexto,
     )
 
-def crear_inquilino(request):
-    if request.method == "POST":
-        formulario = InquilinoFormulario(request.POST)
+#def crear_inquilino(request):
+   # if request.method == "POST":
+     #   formulario = InquilinoFormulario(request.POST)
 
-        if formulario.is_valid():
-            data = formulario.cleaned_data
-            inquilino= Inquilino(
-            nombre= data["nombre"],
-            apellido= data["apellido"],
-            dni= data["dni"],
-            email= data["email"],
-            fecha_nacimiento= data["fecha_nacimiento"], 
-            edificio= data["edificio"])
-            inquilino.save()
-            url_exitosa = reverse("listar_inquilinos")
-            return redirect(url_exitosa)
-    else:
-        formulario = InquilinoFormulario()
-        return render(
-            request=request,
-            template_name="edificios/formulario_inquilinos.html",
-            context={"formulario":  formulario},
-        )
+      #  if formulario.is_valid():
+       #     data = formulario.cleaned_data
+       #     inquilino= Inquilino(
+       #     nombre= data["nombre"],
+        #    apellido= data["apellido"],
+       #     dni= data["dni"],
+       #     email= data["email"],
+       #     fecha_nacimiento= data["fecha_nacimiento"], 
+       #     edificio= data["edificio"])
+        #    inquilino.save()
+       #     url_exitosa = reverse("listar_inquilinos")
+       #     return redirect(url_exitosa)
+  #  else:
+      #  formulario = InquilinoFormulario()
+     #   return render(
+    #        request=request,
+    #        template_name="edificios/formulario_inquilinos.html",
+    #        context={"formulario":  formulario},
+     #   )
 
 def buscar_encargado(request):
     if request.method == "POST":
@@ -84,21 +84,21 @@ def buscar_encargado(request):
             context=contexto,
         )
 
-def ver_inquilinos(request, id):
-    inquilino = Inquilino.objects.get(id=id)
-    contexto = {
-            "inquilino": inquilino
-    }
-    return render(
-        request=request,
-        template_name="edificios/detalle_inquilino.html",
-        context=contexto,
-    )
+#def ver_inquilinos(request, id):
+  #  inquilino = Inquilino.objects.get(id=id)
+ #   contexto = {
+  #          "inquilino": inquilino
+ #   }
+  #  return render(
+  #      request=request,
+  #      template_name="edificios/detalle_inquilino.html",
+  #      context=contexto,
+  #  )
 
-def editar_inquilino(request, id):
-    inquilino = Inquilino.objects.get(id=id)
-    if request.method == "POST":
-        formulario = InquilinoFormulario(request.POST)
+#def editar_inquilino(request, id):
+  #  inquilino = Inquilino.objects.get(id=id)
+   # if request.method == "POST":
+   #     formulario = InquilinoFormulario(request.POST)
 
 
         if formulario.is_valid():
@@ -135,17 +135,32 @@ def eliminar_inquilino(request, id):
 
 
 
-class EdificiosDetailView(DetailView):
-    model = Encargado
-    success_url = reverse_lazy('listar_encargados')
-
-
-class EdificiosUpdateView(UpdateView):
-    model = Edificio
-    success_url = reverse_lazy('listar_edificios')
-
-
-class EdificiosDeleteView(DeleteView):
+class InquilinoListView(ListView):
     model = Inquilino
-    fields = ['nombre', 'apellido', 'dni', 'email']
-    success_url = reverse_lazy('listar_Inquilinos')
+    template_name = "edificios/lista_inquilinos.html"
+
+
+class InquilinoCreateView(CreateView):
+    model = Inquilino
+    fields = ['nombre', 'apellido', 'dni', 'email','fecha_nacimiento', 'edificio', 'descripcion']
+    success_url = reverse_lazy('listar_inquilinos')
+    template_name = "edificios/formulario_inquilinos.html"
+
+
+class InquilinoDetailView(DetailView):
+    model = Inquilino
+    success_url = reverse_lazy('listar_inquilinos')
+    template_name = "edificios/detalle_inquilino.html"
+
+
+class InquilinoUpdateView(UpdateView):
+    model = Inquilino
+    fields = ['nombre', 'apellido', 'dni', 'email','fecha_nacimiento', 'edificio', 'descripcion']
+    success_url = reverse_lazy('listar_inquilinos')
+    template_name = "edificios/formulario_inquilinos.html"
+
+
+class InquilinoDeleteView(DeleteView):
+    model = Inquilino
+    success_url = reverse_lazy('listar_inquilinos')
+    template_name = "estudiantes/confirmar_eliminacion_inquilino.html"

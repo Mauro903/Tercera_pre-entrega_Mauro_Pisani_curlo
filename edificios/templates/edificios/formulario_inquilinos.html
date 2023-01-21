@@ -1,15 +1,27 @@
 {% extends 'edificios/base.html' %}
 
-{% block subtitulo %} Edificios {% endblock subtitulo %}
+{% block subtitulo %} Inquilinos {% endblock subtitulo %}
 
 {% block contenido %}
-{% if es_update %}
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Enviar" />
+</form>
+
+<br>
+<a href="{% url 'listar_inquilinos' %}">Volver lista</a>
+
+
+<!--{% if es_update %}
   <form action="{% url 'editar_inquilino' inquilino.id %}" method="post">
 {% else %}
   <form action="{% url 'crear_inquilinos' %}" method="post">
 {% endif %}
   {% csrf_token %}
-  {{ formulario.as_p }}
+  {{ form.as_p }}
   <input type="submit" value="Enviar">
-</form>
+</form>-->
+
 {% endblock contenido %}
