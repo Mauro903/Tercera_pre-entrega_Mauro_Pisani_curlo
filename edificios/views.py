@@ -14,15 +14,15 @@ def bienvenidos(request):
     )
 
 
-def listar_inquilinos(request):
-    contexto = {
-        "inquilino": Inquilino.objects.all()
-    }
-    return render(
-        request=request,
-        template_name="edificios/lista_inquilinos.html",
-        context=contexto,
-    )
+#def listar_inquilinos(request):
+   # contexto = {
+    #    "inquilino": Inquilino.objects.all()
+  #  }
+ #   return render(
+   #     request=request,
+ #       template_name="edificios/lista_inquilinos.html",
+ #       context=contexto,
+ #   )
 
 def listar_edificios(request):
     contexto= {
