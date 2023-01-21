@@ -101,37 +101,37 @@ def buscar_encargado(request):
    #     formulario = InquilinoFormulario(request.POST)
 
 
-        if formulario.is_valid():
-            data = formulario.cleaned_data
-            inquilino.nombre= data["nombre"]
-            inquilino.apellido= data["apellido"]
-            inquilino.descripcion = data["descripcion"]
-            inquilino.dni= data["dni"],
-            inquilino.email= data["email"],
-            inquilino.fecha_nacimiento= data["fecha_nacimiento"], 
-            inquilino.edificio= data["edificio"]
-            inquilino.descripcion= data["descripcion"]
-            inquilino.save()
-            url_exitosa = reverse("listar_inquilinos")
-            return redirect(url_exitosa)
-        else:
-            inicial={
-                "nombre": inquilino.nombre,
-                "apellido": inquilino.apellido,
-                "descripcion": inquilino.descripcion,
-            }
-            formulario = InquilinoFormulario(initial=inicial)
-        return render(
-            request=request,
-            template_name="edificios/formulario_inquilinos.html",
-            context={"formulario":  formulario, "inquilino": inquilino, "es_update":True},
-        )
-def eliminar_inquilino(request, id):
-    inquilino = Inquilino.objects.get(id=id)
-    if request.method =="POST":
-        inquilino.delete()
-        url_exitosa = reverse("listar_inquilinos")
-        return redirect(url_exitosa)
+   #     if formulario.is_valid():
+    #        inquilino.nombre= data["nombre"]
+    #        inquilino.apellido= data["apellido"]
+    #        inquilino.descripcion = data["descripcion"]
+    #        inquilino.dni= data["dni"],
+    #        inquilino.email= data["email"],
+    #        inquilino.fecha_nacimiento= data["fecha_nacimiento"], 
+    #        inquilino.edificio= data["edificio"]
+    #        inquilino.descripcion= data["descripcion"]
+    #        inquilino.save()
+    #        url_exitosa = reverse("listar_inquilinos")
+    #        return redirect(url_exitosa)
+    #    else:
+    #        inicial={
+    #            "nombre": inquilino.nombre,
+    #            "apellido": inquilino.apellido,
+    #            "descripcion": inquilino.descripcion,
+     #       }
+    #        formulario = InquilinoFormulario(initial=inicial)
+    #    return render(
+    #        request=request,
+    #        template_name="edificios/formulario_inquilinos.html",
+    #        context={"formulario":  formulario, "inquilino": inquilino, "es_update":True},
+     #   )
+
+#def eliminar_inquilino(request, id):
+#    inquilino = Inquilino.objects.get(id=id)
+#    if request.method =="POST":
+#        inquilino.delete()
+#        url_exitosa = reverse("listar_inquilinos")
+#        return redirect(url_exitosa)
 
 
 
