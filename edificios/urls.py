@@ -23,5 +23,6 @@ urlpatterns = [
     path('inquilinos/<int:pk>/', InquilinoDetailView.as_view(), name='ver_inquilino'),
     #URLS usuario y sesion
     path('registro/', registro, name='registro'),
-    
+    path('login/', login_view, name='login'),
+    path('logout/', CustomLogoutView.as_view(), name='logout'),
 ]

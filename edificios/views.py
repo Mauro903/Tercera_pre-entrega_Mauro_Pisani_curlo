@@ -6,6 +6,9 @@ from edificios.models import *
 from edificios.forms import *
 from django.db.models import Q
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import LogoutView
+from django.contrib.auth import login, authenticate
 
 def bienvenidos(request):
         return render(
