@@ -29,10 +29,18 @@
       
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">             
+                <a class="navbar-brand" href="{% url 'bienvenidos' %}">Pagina principal</a>
                 <a class="navbar-brand" href="{% url 'listar_edificios' %}">Edificios</a>
                 <a class="navbar-brand" href="{% url 'listar_inquilinos' %}">Inquilinos</a> 
                 <a class="navbar-brand" href="{% url 'listar_encargados' %}">Encargados</a>
-               <a class="btn btn-primary" href="{% url 'login' %}">HOME</a>
+                {% if user.is_authenticated %}
+                <a class="btn btn-dark" href="{% url 'logout' %}">CERRAR SESION</a>
+                {% else %}
+                    <a class="btn btn-primary" href="{% url 'login' %}">Iniciar sesion</a>
+                    <a class="btn btn-secondary" href="{% url 'login' %}">Registro</a>
+                {% endif %}
+               
+
             </div>
         </nav>
 

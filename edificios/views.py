@@ -9,7 +9,11 @@ from django.views.generic import ListView, CreateView, DetailView, UpdateView, D
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
+
+@login_required
 def bienvenidos(request):
         return render(
         request=request,
@@ -138,32 +142,32 @@ def buscar_encargado(request):
 
 
 
-class InquilinoListView(ListView):
+class InquilinoListView(LoginRequiredMixin, ListView):
     model = Inquilino
     template_name = "edificios/lista_inquilinos.html"
 
 
-class InquilinoCreateView(CreateView):
+class InquilinoCreateView(LoginRequiredMixin, CreateView):
     model = Inquilino
     fields = ['nombre', 'apellido', 'dni', 'email','fecha_nacimiento', 'edificio', 'descripcion']
     success_url = reverse_lazy('listar_inquilinos')
     template_name = "edificios/formulario_inquilinos.html"
 
 
-class InquilinoDetailView(DetailView):
+class InquilinoDetailView(LoginRequiredMixin, DetailView):
     model = Inquilino
     success_url = reverse_lazy('listar_inquilinos')
     template_name = "edificios/detalle_inquilino.html"
 
 
-class InquilinoUpdateView(UpdateView):
+class InquilinoUpdateView(LoginRequiredMixin, UpdateView):
     model = Inquilino
     fields = ['nombre', 'apellido', 'dni', 'email','fecha_nacimiento', 'edificio', 'descripcion']
     success_url = reverse_lazy('listar_inquilinos')
     template_name = "edificios/formulario_inquilinos.html"
 
 
-class InquilinoDeleteView(DeleteView):
+class InquilinoDeleteView(LoginRequiredMixin, DeleteView):
     model = Inquilino
     success_url = reverse_lazy('listar_inquilinos')
     template_name = "edificios/confirmar_eliminacion_inquilino.html"
