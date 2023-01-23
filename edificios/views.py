@@ -217,3 +217,13 @@ def login_view(request):
 
 class CustomLogoutView(LogoutView):
     template_name = 'edificios/logout.html'
+
+#class ProfilUpdateView(LoginRequiredMixin, UpdateView):
+   # model = User
+   # from_class = UserUpdateForm
+   # success_url = reverse_lazy("inicio")
+    #template_name = "edificios/formulario_perfil.html"
+
+   # def get_object(self, queryset=none):
+   #                return.self.request_user
+  

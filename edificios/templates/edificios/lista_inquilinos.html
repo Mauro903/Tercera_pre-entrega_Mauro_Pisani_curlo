@@ -60,19 +60,17 @@ caption {
     <td>{{ inquilino.edificio}}</td>
     <td>{{ inquilino.descripcion}}</td>
     <td>
-      <a href="{% url "ver_inquilino" inquilino.id %}" method="post">
-        <input type="submit" value= "ver"/> 
+      <a href="{% url "ver_inquilino" inquilino.id %}" class="btn btn-success">       ver    </a>
+
     </td>
     <td>
-      <form action="{% url "editar_inquilino" inquilino.id %}" method="post">
-        {% csrf_token %}
-      <input type="submit" value= "Editar"/>  
+      <a href="{% url "editar_inquilino" inquilino.id %}" class="btn btn-primary">        Editar     </a>
+
     </td>
  </form>  
   <td>
-      <form action="{% url "eliminar_inquilino" inquilino.id %}" method="post">
-        {% csrf_token %}
-      <input type="submit" value= "Eliminar"/>
+    <a href="{% url "eliminar_inquilino" inquilino.id %}" class="btn btn-danger">        Eliminar     </a>
+
     </td>
   </form>
   </tr>
